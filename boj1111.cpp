@@ -24,21 +24,17 @@ int main(void)
         int a = v[0]-v[1] != 0 ? (v[1]-v[2])/(v[0]-v[1]) : 1;
         int b = v[1] - a*v[0];
         
-        if (a * v[0] + b != v[1]){
-            cout << "B\n";
-        }
-        else{
-            int i;
-            for(i = 2; i < N; ++i){
-                if( a* v[i-1] +b != v[i]){
-                    cout << "B\n";
-                    break;
-                }
+        int i;
+        for(i = 1; i < N; ++i){
+            if( a* v[i-1] +b != v[i]){
+                cout << "B\n";
+                break;
             }
-            if (i >= N)
-                cout << v.back()*a + b << '\n';
         }
+        if (i >= N)
+            cout << v.back()*a + b << '\n';
         
     }
     return 0;
 }
+
